@@ -26,6 +26,7 @@ app.use(
       "http://localhost:5173",
       "http://192.168.1.11:5173",
       "http://192.168.1.11:4000",
+      "https://jameen-kharido-alpha.vercel.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
