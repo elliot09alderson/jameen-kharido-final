@@ -5,7 +5,9 @@ export const customer_register = createAsyncThunk(
   "auth/customer_register",
   async (info, { rejectWithValue, fulfillWithValue }) => {
     try {
-      const { data } = await api.post("/customer", info);
+      const { data } = await api.post("/customer", info, {
+        withCredentials: true,
+      });
       return fulfillWithValue(data);
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -17,7 +19,9 @@ export const customer_login = createAsyncThunk(
   "auth/customer_login",
   async (info, { rejectWithValue, fulfillWithValue }) => {
     try {
-      const { data } = await api.post("auth/customer/login", info);
+      const { data } = await api.post("auth/customer/login", info, {
+        withCredentials: true,
+      });
       return fulfillWithValue(data);
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -43,7 +47,9 @@ export const admin_register = createAsyncThunk(
   "auth/admin_register",
   async (info, { rejectWithValue, fulfillWithValue }) => {
     try {
-      const { data } = await api.post("/admin", info);
+      const { data } = await api.post("/admin", info, {
+        withCredentials: true,
+      });
 
       return fulfillWithValue(data);
     } catch (error) {
@@ -56,7 +62,9 @@ export const admin_login = createAsyncThunk(
   "auth/admin_login",
   async (info, { rejectWithValue, fulfillWithValue }) => {
     try {
-      const { data } = await api.post("auth/admin/login", info);
+      const { data } = await api.post("auth/admin/login", info, {
+        withCredentials: true,
+      });
       return fulfillWithValue(data);
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -81,9 +89,10 @@ export const admin_logout = createAsyncThunk(
 export const agent_register = createAsyncThunk(
   "auth/agent-register",
   async (info, { rejectWithValue, fulfillWithValue }) => {
-    console.log("ASdasdasdasd", info);
     try {
-      const { data } = await api.post("/agent", info);
+      const { data } = await api.post("/agent", info, {
+        withCredentials: true,
+      });
 
       return fulfillWithValue(data);
     } catch (error) {
@@ -96,7 +105,9 @@ export const agent_login = createAsyncThunk(
   "auth/agent_login",
   async (info, { rejectWithValue, fulfillWithValue }) => {
     try {
-      const { data } = await api.post("auth/agent/login", info);
+      const { data } = await api.post("auth/agent/login", info, {
+        withCredentials: true,
+      });
 
       return fulfillWithValue(data);
     } catch (error) {

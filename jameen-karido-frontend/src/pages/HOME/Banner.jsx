@@ -22,9 +22,9 @@ const Banner = () => {
             </p>
           </div>
         </div>
-        <div className="flex gap-4 lg:pr-12  py-4 ">
-          <input className="border lg:px-12   py-2 rounded" type="text" />
-          <button className="bg-[#EE2A24] font-semibold text-sm lg:text-lg  text-white  rounded lg:px-6 px-2 w-24">
+        <div className="flex gap-4  py-4 ">
+          <input className="border  lg:w-96 pl-2   py-2 rounded" type="text" />
+          <button className="bg-[#EE2A24] font-semibold text-sm lg:text-lg  text-white  rounded lg:px-6 px-2 w-24 lg:w-48">
             Notify me
           </button>
         </div>

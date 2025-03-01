@@ -44,7 +44,7 @@ export const agent_myads = createAsyncThunk(
   "agent/agent_myads",
   async (_, { rejectWithValue, fulfillWithValue }) => {
     try {
-      const { data } = await api.get("/agent/myads");
+      const { data } = await api.get("/agent/myads", { withCredentials: true });
 
       return fulfillWithValue(data); // Directly return data as payload
     } catch (error) {

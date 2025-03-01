@@ -11,7 +11,7 @@ const Category = () => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="h-auto py-6 bg-slate-300 lg:px-20  w-full">
-      <div className="flex overflow-x-scroll lg:overflow-hidden items-center justify-evenly lg:gap-12 h-full    px-2  ">
+      <div className="flex overflow-x-scroll lg:overflow-hidden items-center justify-evenly  lg:gap-12 h-full    px-2  ">
         {[
           {
             name: "Home",
@@ -36,7 +36,7 @@ const Category = () => {
             image: flat,
           },
         ]?.map((item, idx) => (
-          <div className="flex lg:flex-row flex-col items-center lg:justify-between gap-8 lg:gap-0 ">
+          <div className="flex lg:flex-row flex-col  min-w-64 items-center lg:justify-between gap-8 lg:gap-0 ">
             <Link to={`ads/${item.path}`}>
               <div className="flex flex-col gap-4 items-center border cursor-pointer bg-fuchsia-950 px-14 py-10 rounded-md shadow-sm">
                 <img src={item.image} className="lg:size-40 size-20 " alt="" />

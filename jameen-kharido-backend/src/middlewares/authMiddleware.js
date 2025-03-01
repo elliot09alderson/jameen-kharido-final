@@ -9,7 +9,7 @@ class AuthMiddleware {
   customerMiddleware = async (req, res, next) => {
     try {
       const token = req.cookies.customerToken || req.headers.Authorization;
-
+      console.log(token);
       if (!token) {
         return res
           .status(401)

@@ -167,7 +167,12 @@ export const agentLogin = async (req, res) => {
 
       return res
         .status(200)
-        .cookie("agentToken", encryptedToken, { httpOnly: true, secure: true })
+        .cookie("agentToken", encryptedToken, {
+          httpOnly: true, // Prevents client-side JavaScript access
+          secure: process.env.NODE_ENV === "production", // Ensure cookies are only sent over HTTPS in production
+          sameSite: "none", // Required for cross-origin requests
+          maxAge: 1000 * 60 * 60 * 24, // 1 day
+        })
         .json({
           message: "logged in successfully",
           encryptedToken,

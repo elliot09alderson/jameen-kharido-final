@@ -84,8 +84,8 @@ const MyProfile = () => {
     <div className="w-full lg:flex-row flex-col flex h-full lg:h-screen ">
       <div
         className={`lg:w-[17%] w-full${
-          openSidebar ? " fixed h-screen w-[90vw]  z-50 " : " hidden "
-        }   h-screen bg-white border-r lg:flex top-0 left-0    justify-center   flex-col  gap-20   px-4 pl-12  `}
+          openSidebar ? " hidden h-screen w-[90vw]  z-50 " : " hidden "
+        }   h-screen bg-white border-r lg:flex top-0 left-0    justify-center   flex-col  gap-20   px-4 lg:pl-12 pl-4   `}
       >
         <Link
           to={"/agent/post"}
@@ -156,7 +156,82 @@ const MyProfile = () => {
           <h1>Log Out</h1>
         </div>
       </div>
+      {
+        <div
+          className={`lg:w-[17%] bg-white w-full${
+            openSidebar ? "  h-screen  bg-red-500 w-full  " : " w-0  "
+          }    overflow-hidden absolute duration-700 lg:hidden  z-50  border-r flex top-0 left-0    justify-center   flex-col   lg:pl-12  py-20 `}
+        >
+          <Link
+            to={"/agent/post"}
+            className={` ${
+              activeSidebar == -1 && " border bg-gray-100"
+            } p-4 flex  border-2 border-amber-200 shadow-md  hover:border hover:bg-gray-100   text-black items-center lg:my-0 my-4 gap-3 rounded-md cursor-pointer  text-xl font-lg`}
+          >
+            <img
+              src={createad}
+              alt=""
+              className="size-8 rounded-full object-cover"
+            />
+            <h1>Create POST</h1>
+          </Link>
 
+          <div className=" flex flex-col lg:gap-5 gap-2 mb-6 lg:mb-0 ">
+            {[
+              { name: "Profile", img: profile },
+              { name: "All Ads", img: ad },
+              { name: "Home Ads", img: home },
+              { name: "Flat Ads", img: flat },
+              { name: "Shop Ads", img: shop },
+              { name: "Land Ads", img: land },
+            ].map((item, idx) => (
+              <div
+                onClick={() => dispatch(seActiveSidebar(idx))}
+                className={` ${
+                  activeSidebar == idx && " border bg-gray-100"
+                } p-4 flex   hover:bg-gray-100 items-center gap-3 rounded-md  cursor-pointer  text-xl font-lg`}
+              >
+                <img
+                  src={item?.img}
+                  alt=""
+                  className="size-8 rounded-full object-cover"
+                />
+                <h1>{item?.name}</h1>
+              </div>
+            ))}
+          </div>
+          <div
+            onClick={() => {
+              dispatch(seActiveSidebar(9));
+
+              Swal.fire({
+                title: "Are you sure ?",
+                text: "You will be redirected to login activeSidebar!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, Log out!",
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire({
+                    title: "Log Out!",
+                    text: "Agent logout successfully.",
+                    icon: "success",
+                  });
+                  dispatch(agent_logout());
+                }
+              });
+            }}
+            className={` ${
+              activeSidebar == 9 && " border bg-gray-100 "
+            } p-4 flex  hover:border hover:bg-gray-100   border-2 border-red-200 shadow-md items-center gap-3 rounded-md cursor-pointer  text-xl font-lg`}
+          >
+            <LogOut />
+            <h1>Log Out</h1>
+          </div>
+        </div>
+      }
       <div className="lg:w-[83%] w-full relative lg:flex-row flex-col h-full lg:h-screen overflow-y-scroll ">
         <div
           className="w-12 h-12 fixed  right-5 z-50 top-5 bg-slate-800 rounded-full cursor-pointer p-1 lg:hidden flex items-center justify-center text-white"
@@ -172,7 +247,7 @@ const MyProfile = () => {
               } rounded-lg shadow-md relative overflow-hidden w-full h-full lg:h-screen`}
             >
               {!adsInfo?.isVerified && (
-                <div className="text-3xl py-4 rounded-lg bg-gray-200 font-bold w-full left-0 text-center">
+                <div className="text-3xl  py-4 rounded-lg bg-gray-200 font-bold w-full left-0 text-center">
                   <h1 className=" ">Account not Verified !!</h1>
                   <span className="text-sm">
                     upload documents{" "}

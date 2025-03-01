@@ -371,7 +371,7 @@ const PostShop = () => {
           </div>
 
           <h3 className="font-semibold">Select Amenities</h3>
-          <div className="p-4 pt-2">
+          <div className="p-4 px-0 pt-2">
             <div className="flex space-x-0 py-2 items-center  flex-wrap lg:gap-10 gap-5">
               {amenitiesData.map(({ name, label, Icon }) => (
                 <div
