@@ -1,0 +1,44 @@
+/* For the entire scrollbar */
+* {
+  font-family: sans-serif;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+.scr::-webkit-scrollbar {
+  background-color: transparent;
+  width: 8px;
+  height: 4px;
+}
+/* For the thumb (the draggable part) */
+.scr::-webkit-scrollbar-thumb {
+  background: #aaa9a9; /* Darker color for the thumb */
+  border-radius: 4px;
+  height: 4px;
+}
+
+/* .single-blog-bg {
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  background-repeat: no-repeat;
+  width: 100vw;
+  position: relative;
+} */
+
+.single-blog-bg:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 300px;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    white 0%,
+    white 30%,
+    white 60%,
+    white 100%
+  );
+  opacity: 0.5;
+}
