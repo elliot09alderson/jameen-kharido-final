@@ -103,10 +103,10 @@ const Login = () => {
 
                 <button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={loader}
                   className="w-full px-8 h-12 lg:h-10 rounded-md border tracking-wide text-lg border-gray-300 bg-blue-600 text-white"
                 >
-                  Submit
+                  {loader ? "loading..." : "Submit"}
                 </button>
               </Form>
             )}
