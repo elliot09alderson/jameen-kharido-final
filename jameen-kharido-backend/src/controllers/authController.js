@@ -95,7 +95,10 @@ export const customerLogin = async (req, res) => {
 export const customerLogout = async (req, res) => {
   try {
     // Clear the "customerToken" cookie
+    
+    res.clearCookie("agentToken", { httpOnly: true, secure: true });
     res.clearCookie("customerToken", { httpOnly: true, secure: true });
+    res.clearCookie("adminToken", { httpOnly: true, secure: true });
 
     // Respond with a success message
     return res.status(200).json({ message: "Logged out successfully" });
@@ -187,6 +190,8 @@ export const agentLogin = async (req, res) => {
 export const agentLogout = async (req, res) => {
   try {
     res.clearCookie("agentToken", { httpOnly: true, secure: true });
+    res.clearCookie("customerToken", { httpOnly: true, secure: true });
+    res.clearCookie("agentToken", { httpOnly: true, secure: true });
 
     // Respond with a success message
     return res.status(200).json({ message: "Logged out successfully" });
@@ -276,6 +281,8 @@ export const adminLogin = async (req, res) => {
 export const adminLogout = async (req, res) => {
   try {
     res.clearCookie("adminToken", { httpOnly: true, secure: true });
+    res.clearCookie("agentToken", { httpOnly: true, secure: true });
+    res.clearCookie("customerToken", { httpOnly: true, secure: true });
 
     // Respond with a success message
     return res.status(200).json({ message: "Logged out successfully" });
