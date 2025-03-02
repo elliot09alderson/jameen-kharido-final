@@ -105,7 +105,7 @@ const AgentHomeAds = () => {
                       </div>
                       <span className="text-sm font-semibold text-amber-800">
                         ₹ {Math.round(item.price / item.area)}
-                        {"per Square ft. "}
+                        {" per Square ft. "}
                       </span>
                     </div>
                     <div className="flex gap-4 items-center ">

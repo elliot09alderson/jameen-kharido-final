@@ -27,7 +27,7 @@ const Ad = () => {
   useEffect(() => {
     dispatch(fetch_Ad_by_category({ catname }));
   }, [catname]);
-  
+
   useEffect(() => {
     console.log(ApprovedAds);
   }, [ApprovedAds]);
@@ -239,7 +239,7 @@ const Ad = () => {
                   </div>
                   <span className="text-sm font-semibold text-amber-800">
                     ₹ {Math.round(data.price / data.area)}
-                    {"per Square ft. "}
+                    {" per Square ft. "}
                   </span>
                 </div>
                 {!view ? (
