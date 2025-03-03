@@ -34,7 +34,9 @@ const Navbar = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  useEffect(() => {
+    console.log(userInfo);
+  }, [userInfo]);
   useEffect(() => {
     if (successMessage) {
       toast.success(successMessage);

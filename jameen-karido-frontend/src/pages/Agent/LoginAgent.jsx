@@ -40,13 +40,13 @@ const LoginAgent = () => {
         backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 70%), url(${building})`,
       }}
     >
-      <div className=" hidden lg:flex absolute bottom-24 left-24 text-4xl  text-white lg:w-[700px] md:w-[400px] w-full  ">
-        <div className="absolute bottom-24 left-24 text-4xl text-white gap-12  w-full hidden lg:flex  ">
+      <div className=" hidden lg:flex absolute bottom-24 left-24 text-4xl  text-white md:w-[400px] lg:w-full w-full  ">
+        <div className="absolute bottom-0 left-20 text-4xl text-white gap-12  w-full hidden lg:flex  ">
           <h1 className="lg:w-[600px]">
             Hundereds of Users of Chhattisgarh used Jameen Kharido to buy their
             first Dream Home.
           </h1>
-          <div className="flex gap-5 items-center lg:w-[400px] justify-between font-semibold w-full text-lg mt-8 self-end">
+          <div className="flex gap-5 items-center lg:w-[400px] justify-between font-semibold w-full text-lg  self-end">
             <div>1000+ Active and Trusted Ads</div>
             <div>Easy Purchase</div>
             <div>Powerful Dashboard</div>
