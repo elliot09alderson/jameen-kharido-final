@@ -14,7 +14,7 @@ const Home = () => {
       <Navbar />
       <QuickLinks />
       {/* <Bottombar /> */}
-      <Searchbar />
+      {/* <Searchbar /> */}
       <Banner />
       <Category />
       <ApprovedAds />

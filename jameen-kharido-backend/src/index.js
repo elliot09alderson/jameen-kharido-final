@@ -16,7 +16,7 @@ import { adminRouter } from "./routes/adminRouter.js";
 // app.use(cors({ origin: "*" }));
 export const app = express();
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://192.168.1.11:5173");
+  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
   res.header("Access-Control-Allow-Credentials", "true");
   next();
 });
@@ -24,13 +24,11 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "http://192.168.1.11:5173",
-      "http://192.168.1.11:4000",
-      "https://jameen-kharido-alpha.vercel.app",
+      // "https://jameen-kharido-alpha.vercel.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true, // Required for cookies
+    credentials: true,
   })
 );
 app.get("/test-cookie", (req, res) => {
@@ -40,6 +38,7 @@ app.get("/test-cookie", (req, res) => {
 app.use(express.json());
 dotenv.config({ path: "./src/.env" });
 app.use(cookieParser());
+
 export const upload = multer({
   dest: "uploads/",
 });

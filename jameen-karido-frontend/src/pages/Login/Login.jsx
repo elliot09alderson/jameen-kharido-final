@@ -25,6 +25,8 @@ const Login = () => {
     (slice) => slice.auth
   );
 
+  console.log(userInfo);
+
   return (
     <div
       className=" w-full  h-fit lg:h-screen bg-cover bg-center relative  flex items-center justify-center"

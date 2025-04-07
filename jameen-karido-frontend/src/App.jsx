@@ -78,7 +78,7 @@ const App = () => {
           children: [
             {
               element: <PivateAdminRouter />,
-              children: [
+              children: [ 
                 {
                   index: true,
                   element: <Admin />,

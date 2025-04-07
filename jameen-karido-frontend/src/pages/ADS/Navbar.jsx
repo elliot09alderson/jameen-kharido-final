@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "/image/oyo-logo1.png";
+import logo from "/1.png";
 import { Activity, CircleUser, Globe, Phone } from "lucide-react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -7,29 +7,27 @@ import user from "/image/user.webp";
 const Navbar = () => {
   const { userInfo } = useSelector((slice) => slice.auth);
   return (
-    <div className="w-full flex  ">
-      <div className="flex px-10  shadow-md justify-between lg:justify-center items-center py-4 w-full  ">
-        <div className="content-center ">
-          <img className=" w-20" src={logo} alt="oyo-icon" />
-        </div>
-        <div className="lg:flex hidden py-3   px-5 gap-4  justify-between items-center border-r ">
+    <div className="w-full flex  mb-14">
+      <div className="flex px-10 fixed z-20 backdrop-blur-xl shadow-md lg:px-24  justify-between  items-center py-2 w-full  ">
+        <Link to={"/"} className="content-center ">
+          <img className=" w-12" src={logo} alt="jameen-kharido-icon " />
+        </Link>
+        <div className="lg:flex hidden py-3   px-5 gap-4  justify-between items-center ">
           <div className="flex justify-start border cursor-pointer rounded-md ">
             <input
-              className="p-4 w-[300px]  rounded-l-md border-r-2 "
-              placeholder="Koramangala"
+              className="p-4 w-[600px]  rounded-l-md border-r-2 "
+              placeholder="Raipur"
               type="text"
             />
-            <p className="p-4 border-r-2 justify-start  text-base font-semibold bg-white px-8 text-black">
-              Thu, 31 Dec - Wed, 1
-            </p>
-            <p className="p-4  text-base  font-semibold border-gray-500 px-8 bg-white text-black">
-              1 Room, 1 Guest
-            </p>
-            <p className="p-4    rounded-r-md bg-[#1AB64F] hover:bg-[#128036] text-[#FFFFFF] text-base font-bold  px-12">
+
+            <p className="p-4    rounded-r-md bg-red-500 hover:bg-red-700 duration-500 cursor-pointer text-[#FFFFFF] text-base font-bold  px-12">
               Search
             </p>
           </div>
-          <div className="flex   gap-4  items-center">
+        </div>
+
+        <div className="flex items-center gap-2 font-bold">
+          <div className="flex   gap-4  items-center border-x h-full px-4">
             <div className="flex cursol-pointer">
               <Globe className="stroke-1 " />
               <p className="font-semibold">EN</p>
@@ -37,14 +35,11 @@ const Navbar = () => {
             <div className="flex gap-4 items-center ">
               <Phone className="stroke-1 " />
               <div className="flex flex-col ">
-                <p className="text-black font-medium">0124-6201611</p>
-                <p className="text-xs text-gray-500"> Call us to Book now</p>
+                <p className="text-black font-medium">8770800807</p>
+                <p className="text-xs text-gray-500"> Call us to visit</p>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="flex items-center gap-2 font-bold">
           <div className=" bg-red-500 lg:w-12   lg:size-12 rounded-full border ml-5">
             <img
               src={userInfo ? userInfo?.avatar : user}

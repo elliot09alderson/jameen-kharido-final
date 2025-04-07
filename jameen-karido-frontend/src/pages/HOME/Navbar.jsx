@@ -5,6 +5,7 @@ import login from "/image/login.png";
 import { FaSearch } from "react-icons/fa";
 import Searchbar from "./Searchbar";
 import user from "/image/user.webp";
+import { User } from "lucide-react";
 
 import {
   Activity,
@@ -102,11 +103,15 @@ const Navbar = () => {
           </div>
           <div className="flex items-center gap-2 font-bold">
             <div className=" rounded-full border">
-              <img
-                src={userInfo ? userInfo?.avatar : user}
-                className="lg:size-9 hidden lg:flex object-cover size-6 object-container rounded-full overflow-hidden text-center"
-                alt="profile"
-              />
+              {userInfo.avatar ? (
+                <img
+                  src={userInfo.avatar}
+                  className="lg:size-9 hidden lg:flex object-cover size-6 object-container rounded-full overflow-hidden text-center"
+                  alt="profile"
+                />
+              ) : (
+                <User size={30} className="p-1" />
+              )}
             </div>
             {!userInfo?.token ? (
               <div className="text-md ">
